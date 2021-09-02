@@ -1,0 +1,17 @@
+[
+    {
+      "hostname": "OriT49",
+      "ip_address": "192.168.1.6",
+      "resources": "None"
+    },
+    {
+      "hostname": "SharkWeek",
+      "ip_address": "192.168.1.50",
+      "resources": "Samba"
+    },
+    {
+      "hostname": "HP356P",
+      "ip_address": "192.168.1.10",
+      "resources": "Printer"
+    }
+  ]

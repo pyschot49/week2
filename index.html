@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>CS55.13 Section:0508 Assignment 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body>
+
+
+   <div id="holder">
+
+
+   </div>
+
+
+
+
+   	<!-- load React - note when deploying, replace "development.js" with "production.min.js". -->
+   	<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+   	<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+   	<!-- load babel transpiler to convert React's JSX markup to pure JavaScript
+          Note: we only need babel loaded in the browser if we are not using a build system
+          where babel would save pure JS files to be loaded by the browser instead -->
+   	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   	<!-- load our custom script with react component
+          Note: the type attribute MUST be set here to allow babel to convert JSX in our
+          script to pure JS! -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+   <script type="text/babel">
+   "use strict";
+
+   function showData(arg1) {
+     return <div>
+       <ol>
+           {
+             arg1.list.map((item,index) => (
+               <li key={index}>
+                 <h3>
+                 {item.hostname}
+                 </h3>
+                 <h3>
+                 {item.ip_address}
+                 </h3>
+                 <h3>
+                 {item.resources}
+                 </h3>
+               </li>
+             )
+           )
+           }
+       </ol>
+     </div>;
+   }
+
+
+   $.getJSON('network.json', function(jsonFromJquery){
+     ReactDOM.render(<showData list={jsonFromJquery} />, document.getElementById("holder"));
+     }
+   );
+
+
+   </script>
+
+
+
+
+  </body>
+</html>
